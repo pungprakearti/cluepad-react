@@ -4,6 +4,9 @@
   @include cell;
 
   justify-content: center;
+  color: rgba(navy, 0);
+  background-color: white;
+  transition: background-color 0.25s ease, color 0.25s ease;
 
   // Everyone cool your jets. This is for funzies - ❤️, Andrew
   &:focus,
@@ -14,4 +17,5 @@
 
 .selected {
   background-color: skyblue;
+  color: navy;
 }

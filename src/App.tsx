@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import CluePad from './components/CluePad'
 
 const App: React.FC = () => {

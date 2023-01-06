@@ -1,6 +1,7 @@
 @import '/src/main.scss';
 
 .wrap {
+  position: relative;
   width: 340px;
   height: 631px;
   padding: 13px;
@@ -14,12 +15,67 @@
   }
 }
 
+.breakout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 33%;
+  width: 100%;
+  height: calc(100% - 18%);
+  background-color: rgba(white, 0.75);
+  z-index: 1;
+}
+
+.clearText,
+.button {
+  @include shadow;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button {
+  font-size: 40px;
+  border: none;
+  background-color: transparent;
+}
+
+.inner {
+  position: relative;
+
+  &.blur {
+    filter: blur(1px);
+  }
+}
+
+.clear {
+  @include shadow;
+
+  position: absolute;
+  top: -6px;
+  right: 0;
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .title {
+  @include shadow;
+
   font-family: impact, sans-serif;
   line-height: 1;
   margin: 10px 0;
   color: white;
-  text-shadow: 0 2px 10px rgba(black, 0.25);
+  text-transform: uppercase;
 }
 
 .cell,
@@ -91,4 +147,14 @@
 
 .scarlet {
   background-color: crimson;
+}
+
+.link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  color: blue;
+  font-size: 12px;
+  text-decoration: none;
 }

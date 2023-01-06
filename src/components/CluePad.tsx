@@ -18,6 +18,7 @@ const CluePad = () => {
   }
 
   const [tracker, setTracker] = useState(initializeTracker())
+  const [modalActive, setModalActive] = useState(false)
 
   // Change state of cell if clicked
   const handleClick = (name) => {
@@ -26,6 +27,15 @@ const CluePad = () => {
     tempTracker[tempName[0]][tempName[1]] =
       !tempTracker[tempName[0]][tempName[1]]
     setTracker(tempTracker)
+  }
+
+  const handleModal = () => {
+    setModalActive(true)
+  }
+
+  const handleClear = () => {
+    setTracker(initializeTracker())
+    setModalActive(false)
   }
 
   // Static text
@@ -63,7 +73,6 @@ const CluePad = () => {
       tempRow.push(
         <Cell
           selected={tracker[colNum][rowNum]}
-          name={name}
           key={name}
           handleClick={() => handleClick(name)}
         />
@@ -110,27 +119,55 @@ const CluePad = () => {
 
   return (
     <div className={styles.wrap}>
-      <h1 className={styles.title}>CLUE PAD</h1>
-      <div>
-        <div className={styles.row}>{topRowEl}</div>
-        <div className={styles.row}>
-          <h3 className={cx(styles.leftCell, styles.sectionTitle)}>Who?</h3>
+      {modalActive && (
+        <div className={styles.breakout} onClick={() => setModalActive(false)}>
+          <div>
+            <h2 className={styles.clearText}>Clear your pad?</h2>
+            <div className={styles.buttons}>
+              <button className={styles.button} onClick={handleClear}>
+                ✅
+              </button>
+              <button
+                className={styles.button}
+                onClick={() => setModalActive(false)}
+              >
+                🚫
+              </button>
+            </div>
+          </div>
         </div>
-        {playersEl}
-        <div className={styles.row}>
-          <h3 className={cx(styles.leftCell, styles.sectionTitle)}>What?</h3>
+      )}
+      <div className={cx(styles.inner, { [styles.blur]: modalActive })}>
+        <button className={styles.clear} onClick={handleModal}>
+          🧹
+        </button>
+        <h1 className={styles.title}>Clue pad</h1>
+        <div>
+          <div className={styles.row}>{topRowEl}</div>
+          <div className={styles.row}>
+            <h3 className={cx(styles.leftCell, styles.sectionTitle)}>Who?</h3>
+          </div>
+          {playersEl}
+          <div className={styles.row}>
+            <h3 className={cx(styles.leftCell, styles.sectionTitle)}>What?</h3>
+          </div>
+          {weaponsEl}
+          <div className={styles.row}>
+            <h3 className={cx(styles.leftCell, styles.sectionTitle)}>Where?</h3>
+          </div>
+          {roomsEl}
         </div>
-        {weaponsEl}
-        <div className={styles.row}>
-          <h3 className={cx(styles.leftCell, styles.sectionTitle)}>Where?</h3>
-        </div>
-        {roomsEl}
       </div>
+      <a
+        className={styles.link}
+        href='https://github.com/pungprakearti/cluepad-react'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        github.com/pungprakearti/cluepad-react
+      </a>
     </div>
   )
 }
 
 export default CluePad
-
-//6x21 = 126 - One column is the player, we don't need 6 other columns
-//because there are only a total of 6 players
