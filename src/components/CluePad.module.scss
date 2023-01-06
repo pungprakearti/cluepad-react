@@ -1,0 +1,54 @@
+@import '/src/main.scss';
+
+.cell,
+.leftCell {
+  @include cell;
+}
+
+.leftCell {
+  width: 100px;
+  margin-right: auto;
+  text-align: left;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.players,
+.sectionTitle {
+  text-transform: uppercase;
+}
+
+.players,
+.sectionTitle,
+.sectionItem {
+  line-height: 1;
+  margin: 0;
+  margin-right: auto;
+}
+
+.green {
+  background-color: green;
+}
+
+.mustard {
+  background-color: yellow;
+}
+
+.orchid {
+  background-color: magenta;
+}
+
+.peacock {
+  background-color: blue;
+}
+
+.plum {
+  background-color: purple;
+}
+
+.scarlet {
+  background-color: red;
+}

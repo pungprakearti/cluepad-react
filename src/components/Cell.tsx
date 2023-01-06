@@ -3,12 +3,12 @@ import styles from './Cell.module.scss'
 
 type Props = {
   selected: boolean
-  number: number
+  name: string
 }
 
-const Cell: React.FC<Props> = ({ selected = false, number = 0 }) => (
+const Cell: React.FC<Props> = ({ selected = false, name }) => (
   <button
-    name={number.toString()}
+    name={name.toString()}
     className={cx(styles.cell, { [styles.selected]: selected })}
   >
     {selected ? 'X' : ''}
