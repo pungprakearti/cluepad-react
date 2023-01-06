@@ -1,7 +1,12 @@
 import './App.css'
+import CluePad from './components/CluePad'
 
-function App() {
-  return <div className='App'></div>
+const App: React.FC = () => {
+  return (
+    <div className='App'>
+      <CluePad />
+    </div>
+  )
 }
 
 export default App
