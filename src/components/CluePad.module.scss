@@ -1,5 +1,27 @@
 @import '/src/main.scss';
 
+.wrap {
+  width: 340px;
+  height: 631px;
+  padding: 13px;
+  margin: 0 auto;
+  border: 5px solid white;
+  border-radius: 4px;
+  background-color: steelblue;
+
+  @media (min-width: 420px) {
+    margin-top: 80px;
+  }
+}
+
+.title {
+  font-family: impact, sans-serif;
+  line-height: 1;
+  margin: 10px 0;
+  color: white;
+  text-shadow: 0 2px 10px rgba(black, 0.25);
+}
+
 .cell,
 .leftCell {
   @include cell;
@@ -17,38 +39,56 @@
 }
 
 .players,
-.sectionTitle {
-  text-transform: uppercase;
-}
-
-.players,
 .sectionTitle,
 .sectionItem {
   line-height: 1;
   margin: 0;
   margin-right: auto;
+  padding-left: 5px;
+}
+
+.players,
+.sectionTitle {
+  text-transform: uppercase;
+}
+
+.players {
+  font-size: 14px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.sectionItem {
+  width: 100px;
+  text-align: left;
+  font-size: 12px;
+  font-style: italic;
+  background-color: white;
 }
 
 .green {
-  background-color: green;
+  background-color: forestgreen;
 }
 
 .mustard {
-  background-color: yellow;
+  background-color: orange;
 }
 
 .orchid {
-  background-color: magenta;
+  background-color: mediumorchid;
 }
 
 .peacock {
-  background-color: blue;
+  background-color: mediumblue;
 }
 
 .plum {
-  background-color: purple;
+  background-color: indigo;
 }
 
 .scarlet {
-  background-color: red;
+  background-color: crimson;
 }

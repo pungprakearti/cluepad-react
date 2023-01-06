@@ -3,9 +3,15 @@
 .cell {
   @include cell;
 
-  background-color: transparent;
+  justify-content: center;
+
+  // Everyone cool your jets. This is for funzies - ❤️, Andrew
+  &:focus,
+  &:hover {
+    cursor: zoom-in;
+  }
 }
 
 .selected {
-  background-color: red;
+  background-color: skyblue;
 }
