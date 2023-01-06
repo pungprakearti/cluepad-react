@@ -6,7 +6,7 @@ type Props = {
 }
 
 const Cell: React.FC<Props> = ({ type = 'button' }) => {
-  return <div className={styles.[`wrap__${type}`]}></div>
+  return <div className={styles[`wrap__${type}`]}></div>
 }
 
 export default Cell
