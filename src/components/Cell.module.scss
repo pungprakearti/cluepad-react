@@ -1,0 +1,9 @@
+@import '/src/main.scss';
+
+.selected {
+  background-color: red;
+}
+
+.cell {
+  @include cell;
+}
