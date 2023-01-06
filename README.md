@@ -8,3 +8,6 @@
 1. npm start
 
 ![image](https://user-images.githubusercontent.com/41645716/210952664-3cf1d42a-a2a9-4583-b8fa-2c048945598f.png)
+
+Check it out live here:
+https://cluepad.netlify.app/
