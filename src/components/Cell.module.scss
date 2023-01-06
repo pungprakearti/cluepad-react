@@ -4,6 +4,12 @@
   @include cell;
 
   justify-content: center;
+
+  // Everyone cool your jets. This is for funzies - ❤️, Andrew
+  &:focus,
+  &:hover {
+    cursor: zoom-in;
+  }
 }
 
 .selected {
