@@ -54,7 +54,7 @@ const CluePad = () => {
   const createCells = (sectionTitle: string, rowNum: number) => {
     let tempRow = []
     tempRow.push(
-      <h3 className={styles.sectionItem} key={sectionTitle}>
+      <h3 className={cx(styles.cell, styles.sectionItem)} key={sectionTitle}>
         {sectionTitle}
       </h3>
     )
@@ -109,8 +109,8 @@ const CluePad = () => {
   }
 
   return (
-    <div>
-      <h1>Clue Pad</h1>
+    <div className={styles.wrap}>
+      <h1 className={styles.title}>CLUE PAD</h1>
       <div>
         <div className={styles.row}>{topRowEl}</div>
         <div className={styles.row}>

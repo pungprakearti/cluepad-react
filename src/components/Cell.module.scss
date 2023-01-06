@@ -3,9 +3,9 @@
 .cell {
   @include cell;
 
-  background-color: transparent;
+  justify-content: center;
 }
 
 .selected {
-  background-color: red;
+  background-color: skyblue;
 }

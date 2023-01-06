@@ -13,7 +13,7 @@ const Cell: React.FC<Props> = ({ selected = false, name, handleClick }) => (
     className={cx(styles.cell, { [styles.selected]: selected })}
     onClick={handleClick}
   >
-    {selected ? '💀' : ''}
+    {selected ? '✓' : ''}
   </button>
 )
 
