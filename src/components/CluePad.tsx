@@ -10,7 +10,7 @@ const CluePad = () => {
     for (let outerIndex = 0; outerIndex < 7; outerIndex++) {
       let innerArray = []
       for (let innerIndex = 0; innerIndex < 21; innerIndex++) {
-        innerArray.push(true)
+        innerArray.push(false)
       }
       tracker.push(innerArray)
     }
@@ -18,6 +18,15 @@ const CluePad = () => {
   }
 
   const [tracker, setTracker] = useState(initializeTracker())
+
+  // Change state of cell if clicked
+  const handleClick = (name) => {
+    let tempName = name.split('-')
+    let tempTracker = tracker.slice()
+    tempTracker[tempName[0]][tempName[1]] =
+      !tempTracker[tempName[0]][tempName[1]]
+    setTracker(tempTracker)
+  }
 
   // Static text
   const players = ['Green', 'Mustard', 'Orchid', 'Peacock', 'Plum', 'Scarlet']
@@ -52,7 +61,12 @@ const CluePad = () => {
     for (let colNum = 0; colNum < 6; colNum++) {
       const name = `${colNum}-${rowNum}`
       tempRow.push(
-        <Cell selected={tracker[colNum][rowNum]} name={name} key={name} />
+        <Cell
+          selected={tracker[colNum][rowNum]}
+          name={name}
+          key={name}
+          handleClick={() => handleClick(name)}
+        />
       )
     }
     return (
