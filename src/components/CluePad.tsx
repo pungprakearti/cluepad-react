@@ -28,6 +28,10 @@ const CluePad = () => {
     setTracker(tempTracker)
   }
 
+  const handleClear = () => {
+    console.log('click')
+  }
+
   // Static text
   const players = ['Green', 'Mustard', 'Orchid', 'Peacock', 'Plum', 'Scarlet']
   const weapons = [
@@ -110,7 +114,10 @@ const CluePad = () => {
 
   return (
     <div className={styles.wrap}>
-      <h1 className={styles.title}>CLUE PAD</h1>
+      <button className={styles.clear} onClick={handleClear}>
+        🧹
+      </button>
+      <h1 className={styles.title}>Clue pad</h1>
       <div>
         <div className={styles.row}>{topRowEl}</div>
         <div className={styles.row}>
@@ -131,6 +138,3 @@ const CluePad = () => {
 }
 
 export default CluePad
-
-//6x21 = 126 - One column is the player, we don't need 6 other columns
-//because there are only a total of 6 players

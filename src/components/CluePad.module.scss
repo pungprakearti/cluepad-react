@@ -1,6 +1,7 @@
 @import '/src/main.scss';
 
 .wrap {
+  position: relative;
   width: 340px;
   height: 631px;
   padding: 13px;
@@ -14,12 +15,28 @@
   }
 }
 
+.clear {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+  text-shadow: 0 2px 10px rgba(black, 0.25);
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .title {
   font-family: impact, sans-serif;
   line-height: 1;
   margin: 10px 0;
   color: white;
   text-shadow: 0 2px 10px rgba(black, 0.25);
+  text-transform: uppercase;
 }
 
 .cell,
